@@ -8,3 +8,12 @@ while stock_burger > 0: #this condition is true for stock_burger is not equal to
     if stock_burger >=client_order: # this line check if client order is equal or less than our stock then put the order and do print the remaing stock minus client order
         stock_burger -= client_order
         print("Order placed. Remaining burgers in stock:", stock_burger)
+    if stock_burger == 0: # Checks the stock and based the given condtion repeat the process
+        print("No more burgers left.")
+        choice = input("Do you want to continue? (yes/no): ").lower()
+        if choice == "yes":
+            stock_burger = 10  # Refill stock if user wants to continue
+            print("Stock refilled. Continue ordering.")
+        else:
+            print("Thank you for ordering. Goodbye!")
+            break # Stop the program after one cycle
